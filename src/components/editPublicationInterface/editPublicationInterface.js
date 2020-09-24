@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import EditBookContentsButton from "../editPublicationButtons/editBookContentsbutton";
-import TextEditor from "../textEditor/textEditor";
+import TextEditorREBUILD from "../textEditor/textEditorRebuild";
 import EditTitleButton from "../editPublicationButtons/editTitleButton";
 import EditAuthorButton from "../editPublicationButtons/editAuthorButton";
 import categoryTextColor from "../reducers/categoryTextColor";
@@ -87,10 +87,9 @@ const EditPublicationInterface = (props) => {
             </div>
             {authorButtonToggle()}
           </div>
-          <TextEditor
-            publicationId={publication.publicationId}
-            setBookContents={setBookContents}
+          <TextEditorREBUILD
             bookContents={bookContents}
+            setBookContents={setBookContents}
           />
         </div>
         <div className="text-center">

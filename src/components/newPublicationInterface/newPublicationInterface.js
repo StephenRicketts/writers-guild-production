@@ -3,7 +3,7 @@ import SaveButton from "../saveButton/saveButton";
 import TextEditor from "../textEditor/textEditor";
 import GenreDropDown from "../genreDropDown/genreDropDown";
 import CategoryDisplay from "../categoryDisplay/categoryDisplay";
-import JoditEditor from "jodit-react";
+import TextEditorREBUILD from "../textEditor/textEditorRebuild";
 
 const NewPublicationInterface = (props) => {
   const [bookContents, setBookContents] = useState("");
@@ -55,19 +55,10 @@ const NewPublicationInterface = (props) => {
             placeholder="Author..."
             className="p-1 my-2 mb-6"
           />
-
-          <TextEditor
-            setBookContents={setBookContents}
+          <TextEditorREBUILD
             bookContents={bookContents}
+            setBookContents={setBookContents}
           />
-          {/* <JoditEditor
-            ref={editor}
-            value={props.bookContents}
-            config={config}
-            onChange={(newContent) => setBookContents(newContent)}
-            tabIndex={1} // tabIndex of textarea
-            // }} // preferred to use only this option to update the content for performance reasons
-          /> */}
         </div>
         <div className="text-center">
           {" "}
