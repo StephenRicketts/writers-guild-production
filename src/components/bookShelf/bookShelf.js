@@ -69,13 +69,15 @@ const BookShelf = () => {
           );
         })}
       </ul>
-      <span className="p-4 text-white text-center font-mono text-sm">
-        Well would you look at that! <br /> Your work has been bound in a
-        patented Writer's Guild bookspine! <br /> You can click on it to
-        continue editing your work and if your ready to publish,
-        <br /> hit the publish button on the right end and your work will appear
-        in the stacks!
-      </span>
+      <div className="p-2 text-center">
+        <span className="p-4 text-white font-mono">
+          Well would you look at that! <br /> Your work has been bound in a
+          patented Writer's Guild bookspine! <br /> You can click on it to
+          continue editing your work and if your ready to publish,
+          <br /> hit the publish button on the right end and your work will
+          appear in the stacks!
+        </span>
+      </div>
     </div>
   );
 };

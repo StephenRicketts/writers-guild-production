@@ -12,7 +12,7 @@ const categoryColor = (category) => {
       break;
     case "Screen Play":
       {
-        return { backgroundColor: "BlueViolet", maxHeight: 75 };
+        return { backgroundColor: "DarkOrange", maxHeight: 75 };
       }
       break;
     case "Poetry": {

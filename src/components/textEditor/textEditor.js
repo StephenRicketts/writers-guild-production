@@ -1,28 +1,37 @@
-import React, { useRef, useMemo } from "react";
-import JoditEditor from "jodit-react";
+import React from "react";
+import { Editor } from "@tinymce/tinymce-react";
 
-const TextEditor = (props) => {
-  const editor = useRef(null);
-
-  const config = {
-    askBeforePasteFromWord: false,
-    askBeforePasteFromHTML: false,
-    height: 500,
-    readonly: false, // all options from https://xdsoft.net/jodit/doc/
+class TextEditor extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  handleEditorChange = (content, editor) => {
+    console.log("Content was updated:", content);
+    this.props.setBookContents(content);
   };
-  return useMemo(
-    () => (
-      <JoditEditor
-        ref={editor}
-        value={props.bookContents}
-        config={config}
-        onChange={(content) => props.setBookContents(content)}
-        tabIndex={1} // tabIndex of textarea
-        // }} // preferred to use only this option to update the content for performance reasons
+
+  render() {
+    return (
+      <Editor
+        apiKey="kdf5o2lrey8tvua40h7pk2qrxrfe2j8qk7wp0td1d2w76all"
+        initialValue={this.props.bookContents}
+        init={{
+          height: 500,
+          menubar: false,
+          plugins: [
+            "advlist autolink lists link image charmap print preview anchor",
+            "searchreplace visualblocks code fullscreen",
+            "insertdatetime media table paste code help wordcount",
+          ],
+          toolbar:
+            "undo redo | formatselect | bold italic backcolor | \
+             alignleft aligncenter alignright alignjustify | \
+             bullist numlist outdent indent | removeformat | help",
+        }}
+        onEditorChange={this.handleEditorChange}
       />
-    ),
-    []
-  );
-};
+    );
+  }
+}
 
 export default TextEditor;

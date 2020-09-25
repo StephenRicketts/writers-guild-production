@@ -3,7 +3,6 @@ import SaveButton from "../saveButton/saveButton";
 import TextEditor from "../textEditor/textEditor";
 import GenreDropDown from "../genreDropDown/genreDropDown";
 import CategoryDisplay from "../categoryDisplay/categoryDisplay";
-import TextEditorREBUILD from "../textEditor/textEditorRebuild";
 
 const NewPublicationInterface = (props) => {
   const [bookContents, setBookContents] = useState("");
@@ -11,14 +10,6 @@ const NewPublicationInterface = (props) => {
   const [author, setAuthor] = useState("");
   const [genreDropDownToggle, setGenreDropDownToggle] = useState(false);
   const [category, setCategory] = useState(null);
-  const editor = useRef(null);
-
-  const config = {
-    askBeforePasteFromWord: false,
-    askBeforePasteFromHTML: false,
-    height: 500,
-    readonly: false, // all options from https://xdsoft.net/jodit/doc/
-  };
 
   return (
     <div>
@@ -55,7 +46,7 @@ const NewPublicationInterface = (props) => {
             placeholder="Author..."
             className="p-1 my-2 mb-6"
           />
-          <TextEditorREBUILD
+          <TextEditor
             bookContents={bookContents}
             setBookContents={setBookContents}
           />
