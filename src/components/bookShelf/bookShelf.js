@@ -46,6 +46,7 @@ const BookShelf = () => {
               <li
                 style={categoryColor(publication.category)}
                 className="m-2 flex p-4 text-white text-xl cursor-pointer border-4 border-double border-blue-4"
+                key={publication.publicationID}
               >
                 <PublishToggle
                   publicationId={publication.publicationId}
@@ -61,8 +62,8 @@ const BookShelf = () => {
                   {publication.category}
                 </div>
                 <div className="flex-1 flex overflow-hidden">
-                  {publication.likes.length}
-                  <img src="icons/like.png" className="h-6" />
+                  <img src="/icons/like.png" className="h-6" alt="like icon" />
+                  <p className="px-2">{publication.likes.length}</p>
                 </div>
               </li>
             </Link>
@@ -70,12 +71,11 @@ const BookShelf = () => {
         })}
       </ul>
       <div className="p-2 text-center">
-        <span className="p-4 text-white font-mono">
-          Well would you look at that! <br /> Your work has been bound in a
-          patented Writer's Guild bookspine! <br /> You can click on it to
-          continue editing your work and if your ready to publish,
-          <br /> hit the publish button on the right end and your work will
-          appear in the stacks!
+        <span className="p-4 text-white font-mono text-base">
+          Welcome to your bookshelf. <br />
+          Click on your publication to continue to edit
+          <br />
+          or hit the publish button to release it to the world.
         </span>
       </div>
     </div>

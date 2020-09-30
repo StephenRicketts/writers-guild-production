@@ -49,7 +49,7 @@ const ImageChangeDropDown = (props) => {
   };
   return (
     <div className="absolute p-6 text-white bg-gray-900 border-6 border-solid border-gray-700">
-      <span className="py-2">Update Profile Photo</span>
+      <span className="py-2">Upload photo:</span>
       <br />
       <input
         className="py-2 my-auto"

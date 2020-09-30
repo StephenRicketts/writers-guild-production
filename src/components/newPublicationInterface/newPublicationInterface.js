@@ -1,4 +1,4 @@
-import React, { useState, useRef, useMemo } from "react";
+import React, { useState } from "react";
 import SaveButton from "../saveButton/saveButton";
 import TextEditor from "../textEditor/textEditor";
 import GenreDropDown from "../genreDropDown/genreDropDown";
@@ -46,6 +46,11 @@ const NewPublicationInterface = (props) => {
             placeholder="Author..."
             className="p-1 my-2 mb-6"
           />
+          <br />
+          <span className="text-white py-2">
+            * Save early and often as refreshing or navigating away from this
+            page will delete any unsaved work.
+          </span>
           <TextEditor
             bookContents={bookContents}
             setBookContents={setBookContents}

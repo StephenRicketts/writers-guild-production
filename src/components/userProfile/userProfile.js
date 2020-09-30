@@ -3,6 +3,7 @@ import firebaseDB from "../firebase/firebase";
 import ImageChangeDropDown from "../imageChangeDropDown/imageChangeDropDown";
 import DisplayNameChangeDropDown from "../displayNameChangeDropDown/displayNameChangeDropDown";
 import BookShelf from "../bookShelf/bookShelf";
+import { Redirect } from "react-router-dom";
 
 const UserProfile = () => {
   const [imageDropDownToggle, setImageDropDownToggle] = useState(false);
@@ -12,6 +13,10 @@ const UserProfile = () => {
   ] = useState(false);
 
   const user = firebaseDB.auth().currentUser;
+
+  if (user === null) {
+    return <Redirect to="/" />;
+  }
 
   const imageChangeDropDown = () => {
     if (imageDropDownToggle) {

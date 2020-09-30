@@ -21,7 +21,13 @@ const DisplayNameChangeDropDown = (props) => {
 
   return (
     <div>
-      <input onChange={(evt) => setNewDisplayName(evt.target.value)} />
+      <label className="text-sm text-white font-mono" for="displayName">
+        Change Display Name:
+      </label>
+      <input
+        id="displayName"
+        onChange={(evt) => setNewDisplayName(evt.target.value)}
+      />
       <button
         onClick={displayNameChangeHandler}
         className="mx-2 inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-500 hover:bg-white mt-4 lg:mt-0"

@@ -34,7 +34,7 @@ const DeleteButton = (props) => {
           <label className="m-2 text-white font-mono" for="delete">
             {" "}
             Please type delete into this input and hit Accept if you are sure
-            you want to delete you work.
+            you want to delete your work.
             <br />
             <strong>This cannot be reversed.</strong>
           </label>
@@ -64,7 +64,7 @@ const DeleteButton = (props) => {
   return (
     <div>
       <button
-        className="py-3 px-8 my-10 bg-purple-700 text-2xl hover:bg-purple-500 text-white border border-yellow-700 font-bold rounded-full font-mono"
+        className="py-3 px-8 my-10 bg-purple-700 hover:bg-purple-500 text-white border border-yellow-700 font-bold rounded-full font-mono"
         onClick={() => {
           setDeleteButtonDropDownToggle(!deleteButtonDropDownToggle);
         }}

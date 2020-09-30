@@ -4,7 +4,13 @@ import { Redirect } from "react-router-dom";
 
 const SaveButton = (props) => {
   const [redirect, setRedirect] = useState(false);
+
+  if (firebaseDB.auth().currentUser === null) {
+    return <Redirect to="/" />;
+  }
+
   var userId = firebaseDB.auth().currentUser.uid;
+
   const uuid = () => {
     var dt = new Date().getTime();
     var uuid = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(

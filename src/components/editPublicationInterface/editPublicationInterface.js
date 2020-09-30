@@ -86,6 +86,10 @@ const EditPublicationInterface = (props) => {
               />
             </div>
             {authorButtonToggle()}
+            <span className="text-white p-2">
+              * Save early and often as refreshing or navigating away from this
+              page will delete any unsaved work.
+            </span>
           </div>
           <TextEditor
             bookContents={bookContents}
