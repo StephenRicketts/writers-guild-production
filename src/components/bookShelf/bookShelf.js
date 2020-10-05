@@ -71,7 +71,7 @@ const BookShelf = () => {
         })}
       </ul>
       <div className="p-2 text-center">
-        <span className="p-4 text-white font-mono text-base">
+        <span className="p-4 text-white font-mono">
           Welcome to your bookshelf. <br />
           Click on your publication to continue to edit
           <br />

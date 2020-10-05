@@ -50,7 +50,10 @@ const DiscussionInterface = (props) => {
           Post a Comment
         </button>
       </form>
-      <CommentDisplay discussion={props.discussion} />
+      <CommentDisplay
+        discussion={props.discussion}
+        publicationId={props.publicationId}
+      />
     </div>
   );
 };

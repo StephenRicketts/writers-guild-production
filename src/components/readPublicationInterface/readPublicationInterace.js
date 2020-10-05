@@ -7,8 +7,9 @@ import { AuthContext } from "../contexts/authProvider";
 import { Link } from "react-router-dom";
 
 const ReadPublication = (props) => {
-  const { currentUser } = useContext(AuthContext);
   const [commentsToggle, setCommentsToggle] = useState(false);
+  const [redirect, setRedirect] = useState(false);
+  const { currentUser } = useContext(AuthContext);
   const publication = props.location.publication;
   console.log("this should be the publication", publication);
 

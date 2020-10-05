@@ -13,8 +13,8 @@ class TextEditor extends React.Component {
   render() {
     return (
       <Editor
-        apiKey="kdf5o2lrey8tvua40h7pk2qrxrfe2j8qk7wp0td1d2w76all"
         initialValue={this.props.bookContents}
+        apiKey="kdf5o2lrey8tvua40h7pk2qrxrfe2j8qk7wp0td1d2w76all"
         init={{
           height: 500,
           menubar: false,

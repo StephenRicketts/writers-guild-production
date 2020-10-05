@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import SignInSignOutButton from "../signInSignOutButton/signInSignOutButton";
+import LogoutButton from "../logoutButton/logoutButton";
 import { AuthContext } from "../contexts/authProvider";
+import LoginButton from "../loginButton/loginButton";
 
 const Header = (props) => {
   const { currentUser } = useContext(AuthContext);
@@ -41,6 +42,14 @@ const Header = (props) => {
       );
   };
 
+  const loginOrLogout = () => {
+    if (!!currentUser) {
+      return <LogoutButton />;
+    } else {
+      return <LoginButton setAuthorId={props.setAuthorId} />;
+    }
+  };
+
   return (
     <div>
       <nav className="flex items-center justify-between flex-wrap bg-black p-6">
@@ -61,7 +70,7 @@ const Header = (props) => {
             {writeButtonToggle()}
             {profileButtonToggle()}
           </div>
-          <SignInSignOutButton setAuthorId={props.setAuthorId} />
+          {loginOrLogout()}
         </div>
       </nav>
       {signUpBannerToggle()}
