@@ -59,9 +59,10 @@ const SignUp = (props) => {
           alt="Writer's Guild logo"
         />
         <p className="italic text-2xl pt-20">
-          Word of your intellect preceeds you and we are very glad to be in your
+          Word of your intellect precedes you and we are very glad to be in your
           company. May I show you to your writing quarters?
         </p>
+        c
         <input
           placeholder="Email..."
           className="p-2 my-5 mt-20 w-10/12 text-3xl"

@@ -17,20 +17,18 @@ const DiscussionInterface = (props) => {
       commenterDisplayName: user.displayName,
       commenterPhotoURL: user.photoURL,
     };
-    return db
-      .collection("publications")
+    db.collection("publications")
       .doc(props.publicationId)
       .update({ discussion: [...props.discussion, addedComment] })
-      .then(() => {
-        setComment("");
-      })
+      .then(() => {})
       .catch((err) => {
         console.log("the following error has occured: ", err);
       });
+    setComment("");
   };
 
   return (
-    <div className="flex font-mono">
+    <div className="flex font-mono ">
       <form className="p-6 w-2/6 text-center bg-black border-4 border-gray-700">
         <label className="p-6 text-xl mx-auto font-bold">
           Add to the discussion:{" "}
@@ -38,6 +36,7 @@ const DiscussionInterface = (props) => {
         <br />
         <textarea
           className="w-4/5 h-32 text-black"
+          value={comment}
           onChange={(evt) => {
             setComment(evt.target.value);
           }}

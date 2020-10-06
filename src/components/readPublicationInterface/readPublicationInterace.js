@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const ReadPublication = (props) => {
   const [commentsToggle, setCommentsToggle] = useState(false);
-  const [redirect, setRedirect] = useState(false);
+
   const { currentUser } = useContext(AuthContext);
   const publication = props.location.publication;
   console.log("this should be the publication", publication);
@@ -38,29 +38,41 @@ const ReadPublication = (props) => {
     }
   };
 
+  const minHeightStyle = {
+    minHeight: "500px",
+  };
+
   return (
-    <div className="mx-4 my-6 bg-gray-800 text-white">
-      <div className="p-4 bg-black border-4 border-gray-800">
-        <div className="w-full">
-          <Link to="/stacks">
-            <img
-              className="h-8 float-right cursor-pointer"
-              src="/images/cancel-button.png"
-              alt="cancel button"
-            />
-          </Link>
-        </div>
-        <div className="flex">
-          <h1 className="text-2xl italic">{publication.title}</h1>
-          <h2 className="text-2xl px-10">{publication.author}</h2>
-          <h2 className="text-2xl px-10">{publication.category}</h2>
-        </div>
+    <div>
+      <div className="py-10  text-center font-mono">
+        <span className="text-2xl">
+          A professional writer is an amateur who didn’t quit.
+          <br /> <span className="text-xl">-Richard Bach</span>
+        </span>
       </div>
-      <div className="m-5 p-4 bg-white">
-        <ReadDisplay bookContents={publication.bookContents} />
+      <div className="mx-4 my-4 bg-gray-800 text-white">
+        <div className="p-4 bg-black border-4 border-gray-800">
+          <div className="w-full">
+            <Link to="/stacks">
+              <img
+                className="h-8 float-right cursor-pointer"
+                src="/images/cancel-button.png"
+                alt="cancel button"
+              />
+            </Link>
+          </div>
+          <div className="flex">
+            <h1 className="text-2xl italic">{publication.title}</h1>
+            <h2 className="text-2xl px-10">{publication.author}</h2>
+            <h2 className="text-2xl px-10">{publication.category}</h2>
+          </div>
+        </div>
+        <div style={minHeightStyle} className="m-5 p-4 bg-white">
+          <ReadDisplay bookContents={publication.bookContents} />
+        </div>
+        {userInteractionButtonsToggle()}
+        <div>{commentsToggleFunction()}</div>
       </div>
-      {userInteractionButtonsToggle()}
-      <div>{commentsToggleFunction()}</div>
     </div>
   );
 };
