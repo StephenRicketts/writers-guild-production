@@ -35,7 +35,11 @@ const TheStacks = () => {
         style={{ minHeight: "750px" }}
         className="m-2 mb-10 bg-black rounded-md"
       >
-        <span className="p-2 text-white w-full text-2xl">THE STACKS</span>
+        <span className="px-4 py-2 text-white w-full text-2xl">THE STACKS</span>
+        <br />
+        <span className="px-4 text-white w-full">
+          Click on one of the publications below to read.
+        </span>
         <ul className="py-4 mx-2 bg-black">
           {publications.map((publication) => {
             {
